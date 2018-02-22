@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>Battle for the kitchen!</title>
+
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/css/bootstrap.min.css">
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.4.0/css/font-awesome.min.css">
+    <link rel="stylesheet" href="css/reset.css">
+    <link rel="stylesheet" href="css/style.css">
+
+  </head>
+  <body>
+    <div class="jumbotron"><h1>Anxiety Battle!</h1>
+    </div>
+    <p id="instructions"></p>
+    <h2 id="playersTag">The Players:</h2>
+    <div class="col-lg-12">
+      <div class="row playersRow">
+        <div id="player1" class="player col-xs-3 col-sm-3 col-md-3 col-lg-3">
+          <div class="name" id="p1name">Danger Kitty!</div>
+          <img src="images/kitty.jpg" id="p1pic" class="mugShot" clicked="false" height="300" width="325">
+          <div class="strength" id="p1strength">Strength:</div>
+        </div>
+        <div id="player2" class="player col-xs-3 col-sm-3 col-md-3 col-lg-3">
+          <div class="name" id="p2name">Vaccuum of Doom!</div>
+          <img src="images/vaccuum.jpg" id="p2pic" class="mugShot" clicked="false" height="300" width="325">
+          <div class="strength" id="p2strength">Strength:</div>
+        </div>
+        <div id="player3" class="player col-xs-3 col-sm-3 col-md-3 col-lg-3">
+          <div class="name" id="p3name">Terrifying Mop!</div>
+          <img src="images/mop.jpg" id="p3pic" class="mugShot" clicked="false" height="300" width="325">
+          <div class="strength" id="p3strength">Strength:</div>
+        </div>
+        <div id="player4" class="player col-xs-3 col-sm-3 col-md-3 col-lg-3">
+          <div class="name" id="p4name">Spooky Shadows!</div>
+          <img src="images/shadow.jpg" id="p4pic" class="mugShot" clicked="false" height="300" width="325">
+          <div class="strength" id="p4strength">Strength:</div>
+        </div>
+      </div>
+    </div>
+    <br>
+    <div class="pickMe">
+      <h2>The Chosen One:</h2>
+      <div id="chosenOne"></div>
+    </div>
+    <br>
+    <div class="badGuys ">
+      <h2>Evil-Doers:</h2>
+      <div id="evilDoers"></div>
+    </div>
+    <br>
+    <h2 id="battleGround"></h2>
+    <button type="button" name="button">Attaaaaaaack!</button>
+
+
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.3/jquery.min.js"></script>
+    <script type="text/javaScript" src="javascript/game.js"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/js/bootstrap.min.js"></script>
+  </body>
+</html>
