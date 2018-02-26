@@ -1,0 +1,85 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>Play nice!</title>
+
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/css/bootstrap.min.css">
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.4.0/css/font-awesome.min.css">
+    <link rel="stylesheet" href="css/reset.css">
+    <link rel="stylesheet" href="css/style.css">
+
+  </head>
+  <body>
+    <div class="jumbotron">
+      <h1>Anxiety Battle!</h1>
+      <div id="play-again"></div>
+    </div>
+    <p id="instructions"></p>
+    <!-- <div class="badGuys "> -->
+    <div class="container-fluid">
+      <div class="thePitch">
+        <h2 id="battleGround"><span id="winnerMssg"></span></h2>
+        <!-- <span id="fight"></span> -->
+      <!-- <div class="pickMe"> -->
+        <div class="row">
+          <h2 id="chosenTitle" class="opponent col-xs-4 col-sm-4 col-md-4 col-lg-4"></h2>
+          <h2 id="evilInside" class="opponent col-xs-4 col-sm-4 col-md-4 col-lg-4"></h2>
+        </div>
+        <div class="row">
+          <div id="chosenOne" class="opponent col-xs-4 col-sm-4 col-md-4 col-lg-4"></div>
+          <div id="attack" class="col-xs-2 col-sm-2 col-md-2 col-lg-2">
+            <button id="attackBtn" style="display: none">Attaaaaaaack!</button>
+          </div>
+          <div id="evilDude" class="opponent col-xs-4 col-sm-4 col-md-4 col-lg-4"></div>
+        </div>
+      </div>
+    <!-- </div> -->
+    <br>
+    <div><h2 id="badGuys"></h2><div id="evilsQue"></div></div>
+    <div><h2 id="evilDefeated"></h2><p id="evilDoers"></p></div>
+    <!-- </div> -->
+    <h2 id="playersTag">The Players:</h2>
+    <!-- <div class="col-lg-12"> -->
+      <div class="row playersRow">
+        <div id="player1" class="player col-xs-3 col-sm-3 col-md-3 col-lg-3" data-name="kitty">
+          <div class="name" id="kitty">Danger Kitty!</div>
+          <img src="images/kitty.jpg" id="kitty-pic" class="mugShot" height="250" width="280">
+          <div class="hp">Health Points: <span id="p1hp"></span></div>
+        </div>
+        <div id="player2" class="player col-xs-3 col-sm-3 col-md-3 col-lg-3" data-name="vacuum">
+          <div class="name" id="vacuum">Vacuum of Doom!</div>
+          <img src="images/vaccuum.jpg" id="vacuum-pic" class="mugShot" height="250" width="280">
+          <div class="hp">Health Points: <span id="p2hp"></span></div>
+        </div>
+        <div id="player3" class="player col-xs-3 col-sm-3 col-md-3 col-lg-3" data-name="mop">
+          <div class="name" id="mop">Terrifying Mop!</div>
+          <img src="images/mop.jpg" id="mop-pic" class="mugShot" height="250" width="280">
+          <div class="hp">Health Points: <span id="p3hp"></span></div>
+        </div>
+        <div id="player4" class="player col-xs-3 col-sm-3 col-md-3 col-lg-3"data-name="shadow">
+          <div class="name" id="shadow">Spooky Shadows!</div>
+          <img src="images/shadow.jpg" id="shadow-pic" class="mugShot" height="250" width="280">
+          <div class="hp">Health Points: <span id="p4hp"></span></div>
+        </div>
+      </div>
+    </div>
+    <br>
+
+    <!-- <div class="badGuys "> -->
+      <!-- <div><h2 id="evilTitle"></h2><p id="badGuys"></p></div>
+      <div id="evilDoers"></div> -->
+    <!-- </div> -->
+    <!-- <br> -->
+    <!-- <div><h2 id="evilsQue"></h2><span id="fight"></span></div> -->
+    <!-- <input type="button" id="addEvil" class="button" /> -->
+    <!-- <br> -->
+    <footer class="glyphicon glyphicon-wrench">As Always, Under Construction</footer>
+
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.3/jquery.min.js"></script>
+    <script type="text/javaScript" src="javascript/game.js"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/js/bootstrap.min.js"></script>
+  </body>
+</html>

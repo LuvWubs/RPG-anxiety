@@ -1,0 +1,91 @@
+create var of each obj name set = to nothing
+create var = obj w/ props/values to put in the constructor
+  include name/hp/defense/attack
+  set attack to math random # to randomize outcome ???
+create obj constructor to print out full obj on demand
+
+var evilArray = []
+var player1
+var player2
+
+function startGame() =>{.css scripting; chooseGood()}
+
+function chooseGood()
+  var player1chosen = false
+  .player div is clicked .one time only
+    player1chosen = true
+    if player1chosen = true
+      retrieve obj assoc w/ pic
+      set this = to player1 var
+      movePlayer() to #chosenOne
+    else
+      .filter other .players objs into opponents array
+      movePlayer to #evilsQue div
+      chooseEvil()
+
+  if player1chosen = true
+    retrieve obj from badGuy array assoc w/ pic
+    set this = player2 var
+
+
+function chooseEvil(name)
+  if obj.name = badGuy array[i]
+    #winnerMssg set to empty/ " "
+    var player2 = badGuy array[i]
+    player2 = true
+    moveEvil()
+  else
+    var gameOver = true
+    "you have beaten the odds & have beaten evil. you win!" in instructions div
+    append play-again button
+
+function moveHero()
+  remove chosenOne
+  append chosenOne to battleGrounds #chosenOne div
+
+
+function moveEvil ()
+  remove badGuy from #evilsQue
+  if player2 = true
+    append badGuy to battleGrounds #evilDude div
+    create & append #attack button to .thePitch div
+  else
+    append badGuy to #evilDefeated div
+    remove attack button
+
+attack button clicked
+  setInterval(OffenseDefenseStats, 1000)
+
+function OffenseDefenseStats()
+  player2.hp -= player1.attack
+  player1.hp -= player2.attack
+
+  if player2.hp >= 0
+    update player2.hp in player2 obj & hp div
+  else
+    clearInterval(OffenseDefenseStats)
+    "evil wins this time" in #winnerMssg div
+    #play-again button appended to #winnerMssg
+
+  if player1.hp >= 0
+    update player1.hp in player1 obj & hp div
+  else
+    clearInterval(OffenseDefenseStats)
+    "righteousness prevails" in #winnerMssg div
+    player2 = false
+    moveEvil()
+    "choose another evil doer" in #instructions div
+    .player < #evilsQue .click(func() {
+      empty #instructions div
+      if (player1 = true && player2 = false) {
+        "choose evil" in #instructions
+      } else {
+        chooseEvil()
+      }
+    })
+
+  #play-again on click
+    if (gameOver = true)
+      give player obj starting name/hp/defense/attack in obj & .hp divs
+      move players back to .playersRow
+      startGame()

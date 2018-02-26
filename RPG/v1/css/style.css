@@ -1,0 +1,86 @@
+body {
+  margin-left: 25px;
+  margin-right: 25px;
+  display: grid;
+}
+
+#evilInside, #evilDude {
+  float: right;
+}
+
+#instructions {
+  font-size: 20px;
+  font-weight: normal;
+  text-align: center;
+}
+
+.playersRow {
+  /* display: inline-block; */
+}
+
+#chosenOne {
+  float: left;
+}
+
+#evilOne {
+  float: right;
+}
+
+#playersTag {
+  margin-left: 10px;
+}
+
+h1 {
+  text-align: center;
+}
+
+.player, .mugShot {
+  border: 1px solid grey;
+}
+
+.player {
+  width: 25%;
+}
+
+.mugShot {
+  margin-left: -5px;
+}
+
+#evilDoers {
+  float: right;
+  display: inline;
+  /* display: grid; */
+}
+
+#badGuys {
+  font-size: 20px;
+  font-weight: normal;
+  display: inline;
+}
+
+#chosenTitle, #evilInside {
+  display: inline;
+}
+
+#evilTitle {
+  display: inline-block;
+}
+
+button {
+  width: 200px;
+}
+
+upNext {
+  display: block;
+  float: right;
+}
+
+footer {
+  background-color: grey;
+  text-align: center;
+  font-size: 20px;
+  font-weight: bold;
+  color: white;
+  padding-top: 30px;
+  padding-bottom: 30px;
+}
