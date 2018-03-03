@@ -18,16 +18,16 @@ $(document).ready(function() {
   //   goodPlayer.hp -= damageDone;
   // };
 
-  var kitty;
-  var vacuum;
-  var mop;
-  var shadow;
+  var Kitty;
+  var Vacuum;
+  var Mop;
+  var Shadow;
 
   // creates all Players {} w/ arguments by calling new
-  kitty = new Players('kitty', 60, 17, 33);
-  vacuum = new Players('vacuum', 90, 25, 12);
-  mop = new Players('mop', 100, 16, 10);
-  shadow = new Players('shadow', 50, 3, 2);
+  kitty = new Players('Kitty', 60, 17, 33);
+  vacuum = new Players('Vacuum', 90, 25, 12);
+  mop = new Players('Mop', 100, 16, 10);
+  shadow = new Players('Shadow', 50, 3, 2);
   var evilArray = [kitty, vacuum, mop, shadow];
 
   var player1;
@@ -39,9 +39,10 @@ $(document).ready(function() {
 
   function movePlayer(selector, el, playerObj) {
     var hpChild = $(el).children().filter('.hp').children()[0];
-    console.log('these are all of the clicked divs hp children: ', $(el).children().filter('.hp').children());
-    console.log(hpChild);
-    console.log(playerObj.hp, 'this is the playerObj.hp');
+    // console.log('these are all of the clicked divs hp children: ', $(el).children().filter('.hp').children());
+    // console.log(hpChild);
+    // console.log('this in movePlayer function: ', this);
+    // console.log(playerObj.hp, 'this is the playerObj.hp');
     $(hpChild).html(playerObj.hp);
     $(selector).append(el);
     $('.player').css('width', '300px');
@@ -54,7 +55,7 @@ $(document).ready(function() {
         chosenPlayer = evilArray[i];
       }
     }
-    console.log('chosenPlayer is: ', chosenPlayer);
+    // console.log('chosenPlayer is: ', chosenPlayer);
     return chosenPlayer;
   }
 
@@ -66,9 +67,9 @@ $(document).ready(function() {
   }
 
   function chooseGood(playerName) {
-    console.log('playerName is: ', playerName);
+    // console.log('playerName is: ', playerName);
     var goodObj = getPlayerObj(playerName);
-    console.log('this is the player obj from the choosegood func', goodObj);
+    // console.log('this is the player obj from the choosegood func', goodObj);
     return goodObj;
   }
 
@@ -83,7 +84,7 @@ $('.player').one('click', function (e) {
   $('#badGuys').html(' Fight one bad-guy at a time by clicking each Evil-doer. Use strategy to defeat them all!');
   playerName = $(this).attr('data-name');
   var playerObj = getPlayerObj(playerName);
-  console.log('this is the player obj from click handler: ', playerObj);
+  // console.log('this is the player obj from click handler: ', playerObj);
   if (!player1chosen ) {
     player1chosen = true;
     goodPlayer = chooseGood(playerName);
@@ -104,52 +105,73 @@ $('.player').one('click', function (e) {
 
 var goodPlayer;
 var badPlayer;
+var toTheDeath = function() {
+  return setInterval(nextAttack, 1000);
+  }
 
 $("#attackBtn").click(function() {
-  // var toTheDeath = setInterval(nextAttack, 1000);
   nextAttack();
+  toTheDeath();
 })
 
 function nextAttack() {
   var player1attack = true;
   var player2attack = false;
   if (player1attack  = true && badPlayer.hp >= 0) {
-    console.log(goodPlayer.attack, 'goodPlayer.attack');
-    console.log(badPlayer.defense, 'badPlayer.defense');
+    // console.log(goodPlayer.attack, 'goodPlayer.attack');
+    // console.log(badPlayer.defense, 'badPlayer.defense');
     damageDone = goodPlayer.attack - badPlayer.defense;
-    console.log(damageDone);
+
+    // $(goodPlayer).children().filter('.hp').children()[0].html(damageDone);
+    // $(hpChild).html(playerObj.hp);
+    // console.log(damageDone);
     if (damageDone < 0) {
       badPlayer.hp += damageDone;
+      console.log(badPlayer.hp);
+      $('#evilDude').find('span').empty().append(badPlayer.hp);
     } else {
       badPlayer.hp -= damageDone;
+      console.log(badPlayer.hp);
+      $('#evilDude').find('span').empty().append(badPlayer.hp);
     }
-    // Players.prototype.attack(goodPlayer);
-    console.log('badPlayer.hp decreases to: ', badPlayer.hp);
+    // console.log('badPlayer.hp decreases to: ', badPlayer.hp);
     // console.log('goodPlayer.hp is still: ', goodPlayer.hp);
     player1attack = false;
     player2attack = true;
   }
   if (player2attack = true && goodPlayer.hp >= 0) {
-    console.log(badPlayer.attack, 'badPlayer.attack');
-    console.log(goodPlayer.defense, 'goodPlayer.defense');
+    // console.log(badPlayer.attack, 'badPlayer.attack');
+    // console.log(goodPlayer.defense, 'goodPlayer.defense');
     totalDamage = badPlayer.attack - goodPlayer.defense;
-    console.log(totalDamage);
+    // $(badPlayer).children().filter('.hp').children()[0].html(totalDamage);
+    // console.log(totalDamage);
     if (totalDamage < 0) {
       goodPlayer.hp += totalDamage;
+      console.log(goodPlayer.hp);
+      $('#chosenOne').find('span').empty().append(goodPlayer.hp);
     } else {
       goodPlayer.hp -= totalDamage;
+      console.log(goodPlayer.hp);
+      $('#chosenOne').find('span').empty().append(goodPlayer.hp);
     }
-    console.log('goodPlayer.hp decreases to: ', goodPlayer.hp);
+    // console.log('goodPlayer.hp decreases to: ', goodPlayer.hp);
     // console.log('badPlayer.hp is still: ', goodPlayer.hp);
     player1attack = true;
     player2attack = false;
   }
-  if (badPlayer.hp <= 0 || goodPlayer.hp <= 0) {
-    if (badPlayer.hp <= 0) {
-      winner = goodPlayer.name;
-    } else if (goodPlayer.hp <= 0) {
-      winner = badPlayer.name;
-    }
+
+  var winner;
+  if (badPlayer.hp <= 0) {
+    winner = goodPlayer.name;
+  } else if (goodPlayer.hp <= 0) {
+    winner = badPlayer.name;
+  }
+
+}
+
+function defeatedMssg() {
+  var defeated = setInterval()
+  if ((badPlayer.hp <= 0) || (goodPlayer.hp <= 0)) {
     $("#attackBtn").hide();
     $('#attack').append(winner + ' has won this battle!')
     player2chosen = false;
@@ -161,5 +183,3 @@ function nextAttack() {
 
 startGame();
 })
-
-//       var evilDoers = $('#' + e.target.id).parent().siblings();
