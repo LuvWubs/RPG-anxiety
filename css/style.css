@@ -2,11 +2,19 @@ body {
   margin-left: 25px;
   margin-right: 25px;
   display: grid;
-  background-image: url('../images/strange_bullseyes.png');
+  background-image: url('../images/strange_bullseyes/strange_bullseyes_@2X.png');
+}
+
+.jumbotron {
+  height: 220px;
 }
 
 #evilInside, #evilDude {
   float: right;
+}
+
+#evilInside {
+  margin-right: -75px;
 }
 
 #instructions {
@@ -15,17 +23,19 @@ body {
   text-align: center;
 }
 
-.playersRow {
+#playersRow {
   display: inline-block;
   margin: auto;
 }
 
 #chosenOne {
   float: left;
+  margin-right: 40px;
 }
 
 #evilOne {
   float: right;
+  margin-left: 40px;
 }
 
 #playersTag {
@@ -49,7 +59,7 @@ h1 {
 }
 
 #attack {
-  margin-left: 40px;
+  text-align: center;
 }
 
 #evilDoers {
@@ -61,7 +71,8 @@ h1 {
 #badGuys {
   font-size: 20px;
   font-weight: normal;
-  display: inline;
+  display: block;
+  text-align: center;
 }
 
 #chosenTitle, #evilInside {
